@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Archivo Black', sans-serif;
+
+  --color-brown: #3e3028;
+  --color-mocha: #705548;
+  --color-beige: #d8c3a5;
+  --color-cream: #f7f2ea;
+  --color-ink: #292524;
+
+  --color-brand: #8a5a2b;
+  --color-brand-dark: #704420;
+  --color-brand-light: #b8895a;
+  --color-brand-soft: #e8dcc8;
+  --color-brand-pale: #f0e8dc;
+  --color-heading: #3e3028;
+  --color-accent: #8a5a2b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f2ea;
+  color: #292524;
+  font-family: var(--font-sans);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in { animation: scale-in 150ms ease-out both; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up 200ms ease-out both; }
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.animate-skeleton-pulse { animation: skeleton-pulse 1.5s ease-in-out infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.6s ease-out both; }
+.animate-fade-up-delay-1 { animation: fade-up 0.6s ease-out 0.15s both; }
+.animate-fade-up-delay-2 { animation: fade-up 0.6s ease-out 0.3s both; }
+.animate-fade-up-delay-3 { animation: fade-up 0.6s ease-out 0.45s both; }
+.animate-fade-up-delay-4 { animation: fade-up 0.6s ease-out 0.6s both; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delay-1 { animation: float 7s ease-in-out 1s infinite; }
+.animate-float-delay-2 { animation: float 5s ease-in-out 2s infinite; }
+.animate-float-delay-3 { animation: float 8s ease-in-out 0.5s infinite; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 50%, 90% { transform: translateX(-5px); }
+  30%, 70% { transform: translateX(5px); }
+}
+.animate-shake { animation: shake 0.4s ease-out; }
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+.animate-pulse-ring { animation: pulse-ring 2s ease-in-out infinite; }
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-left { animation: slide-in-left 0.5s ease-out both; }
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right { animation: slide-in-right 0.5s ease-out both; }
+
+@keyframes scale-in-up {
+  from { opacity: 0; transform: scale(0.95) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-scale-in-up { animation: scale-in-up 0.5s ease-out both; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes float-credit-card {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(-8px); }
+}
+.animate-float-credit-card { animation: float-credit-card 4s ease-in-out infinite; }
+
+@keyframes float-credit-card-2 {
+  0%, 100% { transform: rotate(4deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-6px); }
+}
+.animate-float-credit-card-2 { animation: float-credit-card-2 5s ease-in-out infinite; }
+
+@keyframes float-credit-card-3 {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-10px); }
+}
+.animate-float-credit-card-3 { animation: float-credit-card-3 3.5s ease-in-out infinite; }
+
+/* Sliding pill toggle */
+.slide-pill-container {
+  position: relative;
+  display: flex;
+  background: #e8e0d5;
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 0;
+}
+.slide-pill-indicator {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 9999px;
+  background: #E17100;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(225,113,0,0.3);
+}
+.slide-pill-btn {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #705548;
+  background: transparent;
+  border: none;
+}
+.slide-pill-btn.active {
+  color: white;
+}
+
+/* Floating label shared styles */
+.floating-label-group {
+  position: relative;
+}
+.floating-label-group label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #b8895a;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background: transparent;
+  padding: 0 4px;
+}
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 12px;
+  color: #E17100;
+  background: white;
+}
+.floating-label-group input:focus {
+  outline: none;
+  ring: 2;
+  ring-color: rgba(225,113,0,0.2);
+  border-color: #E17100;
+}
+
+/* Mobile responsiveness for decorative panels */
+@media (max-width: 1024px) {
+  .decorative-panel {
+    height: 30vh !important;
+  }
+}
+@media (max-width: 768px) {
+  .decorative-panel {
+    height: 25vh !important;
+  }
+}
